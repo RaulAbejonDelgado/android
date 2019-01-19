@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String fixString(ArrayList<Texto> mensajes) {
 
-        String finalMsg = "";
+        String finalMsg ;
 
         finalMsg = mensajes.toString().replace("[","");
         finalMsg = finalMsg.replace("]","");
@@ -49,5 +49,12 @@ public class MainActivity extends AppCompatActivity {
         finalMsg = finalMsg.replace(" ","");
 
         return finalMsg;
+    }
+
+    public void clearData(View view) {
+        TextView outputText = findViewById(R.id.outputText);
+
+        outputText.setText("");
+
     }
 }

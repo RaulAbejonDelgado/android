@@ -1,8 +1,10 @@
-package xom.raul.ipartek.hola_mundo2;
+package xom.raul.ipartek.hola_mundo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import xom.raul.ipartek.hola_mundo2.R;
 
 
 public class MainActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package xom.raul.ipartek.hola_mundo2;
+package xom.raul.ipartek.hola_mundo;
 
 import org.junit.Test;
 
