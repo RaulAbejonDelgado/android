@@ -11,14 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="write your text"
         android:inputType="textWebEditText|text" />
-
-
-
     <TextView
         android:id="@+id/outputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:textSize="30sp" />
 
     <LinearLayout
@@ -43,9 +42,7 @@
             android:text="Clear"
             android:orientation="horizontal"
             android:layout_weight="1"/>
+
     </LinearLayout>
-
-
-
 
 </LinearLayout>

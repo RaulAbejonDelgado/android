@@ -52,9 +52,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clearData(View view) {
-        TextView outputText = findViewById(R.id.outputText);
 
-        outputText.setText("");
+        mensajes = new ArrayList<>();
+        TextView outputText = findViewById(R.id.outputText);
+        finalMsg = "";
+
+
+
+        outputText.setText(finalMsg);
 
     }
 }
