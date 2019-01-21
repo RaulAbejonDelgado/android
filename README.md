@@ -13,3 +13,7 @@
 ### input_text_output_text_view
 
    Aplicacion que permite ingresar texto que es mostrado por pantalla tras haber introducido texto y haber pulsado boton confirm, al pulsar el boton clear limpearemos la pantalla hasta que volvamos a ingreasar texto.
+   
+### InterfazDinamica
+
+   Calculadora 
