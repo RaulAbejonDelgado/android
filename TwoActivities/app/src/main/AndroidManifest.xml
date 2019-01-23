@@ -16,10 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SecondActivity"
-            android:label="@string/title_activity_second"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".SecondActivity"
+            android:label = "Second Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.raul.ipartek.twoactivities.MainActivity" />
+
+        </activity>
     </application>
 
 </manifest>
