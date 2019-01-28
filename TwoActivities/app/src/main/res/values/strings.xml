@@ -4,7 +4,7 @@
     <string name="title_activity_second">SecondActivity</string>
     <string name="text_header">Message recived</string>
     <string name="name">Name</string>
-    <string name="reply">Reply</string>
     <string name="enterReply">Enter your reply</string>
     <string name="text_header_reply">Reply recived</string>
+    <string name="reply">Reply</string>
 </resources>
