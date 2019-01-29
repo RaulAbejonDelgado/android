@@ -87,8 +87,6 @@ public class MainActivity extends AppCompatActivity {
             //Guardamos el valor del campo en el cambio de estado
             outState.putString(REPLY_TEXT,mReplyTextView.getText().toString());
         }
-
-
     }
 
     @Override
