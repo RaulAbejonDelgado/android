@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.SimpleCalc;
+package com.example.simplecalc;
 
 import android.app.Activity;
 import android.os.Bundle;
