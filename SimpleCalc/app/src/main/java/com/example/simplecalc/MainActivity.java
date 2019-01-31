@@ -94,7 +94,7 @@ public class MainActivity extends Activity {
         double operandTwo;
         try {
             operandOne = getOperand(mOperandOneEditText);
-            operandTwo = getOperand(mOperandTwoEditText);
+            operandTwo = (getOperand(mOperandTwoEditText) < 0.0 ? 0.0 : getOperand(mOperandTwoEditText)) ;
         } catch (NumberFormatException nfe) {
             Log.e(TAG, "NumberFormatException", nfe);
             mResultTextView.setText(getString(R.string.computationError));
