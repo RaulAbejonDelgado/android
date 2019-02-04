@@ -1,8 +1,37 @@
+
+
 <resources>
     <string name="app_name">Droid Cafe</string>
-    <string name="action_settings">Settings</string>
-    <string name="droid_desserts">Droid Desserts</string>
-    <string name="donuts_are_glazed_and_sprinkled_with_candy_you_can_copy_paste_the_text_into_the_field">Donuts are glazed and sprinkled with candy.(You can copy/paste the text into the field.)</string>
-    <string name="ice_cream_sandwiches_have_chocolate_wafers_and_vanilla_filling">Ice cream sandwiches have chocolate wafers and vanilla filling.</string>
-    <string name="froyo_is_premium_self_serve_frozen_yogurt">FroYo is premium self‑serve frozen yogurt.</string>
+    <string name="action_settings">Opciones</string>
+    <string name="intro_text">Postres</string>
+    <string name="donuts">Donuts are glazed and sprinkled with candy.</string>
+    <string name="ice_cream_sandwiches">Ice cream sandwiches have chocolate
+        wafers and vanilla filling.</string>
+    <string name="froyo">FroYo is premium self-serve frozen yogurt.</string>
+    <string name="donut_order_message">You ordered a donut.</string>
+    <string name="ice_cream_order_message">You ordered an ice cream
+        sandwich.</string>
+    <string name="froyo_order_message">You ordered a FroYo.</string>
+    <string name="change_dessert">Change dessert</string>
+    <string name="order_label_text">Pedido:</string>
+    <string name="note_label_text">Nota:</string>
+    <string name="name_label_text">Nombre</string>
+    <string name="enter_name_hint">Introduzcaa su nombre</string>
+    <string name="address_label_text">Dirección</string>
+    <string name="enter_address_hint">Introuduzca dirección</string>
+    <string name="phone_label_string">Telefono</string>
+    <string name="enter_phone_hint">Introduzca el numero de telefono</string>
+    <string name="enter_note_hint">Introduzca nota</string>
+    <string name="choose_delivery_method">Seleccione el tipo de envio:</string>
+    <string name="same_day_messenger_service">Delivero</string>
+    <string name="next_day_ground_delivery">Globo</string>
+    <string name="pick_up">Recoger en tienda</string>
+
+    <string-array name="labels_array">
+        <item>Casa</item>
+        <item>Trabajo</item>
+        <item>Mobil</item>
+        <item>otro</item>
+    </string-array>
+
 </resources>
