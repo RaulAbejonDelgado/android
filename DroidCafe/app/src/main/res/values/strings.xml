@@ -26,6 +26,7 @@
     <string name="same_day_messenger_service">Delivero</string>
     <string name="next_day_ground_delivery">Globo</string>
     <string name="pick_up">Recoger en tienda</string>
+    <string name="opcion_no_valida">Opcion imposible que se de</string>
 
     <string-array name="labels_array">
         <item>Casa</item>
