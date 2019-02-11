@@ -4,18 +4,21 @@ import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextView;
     private static final String TEXT_STATE = "currentText";
+    private ProgressBar mProgresBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mTextView = findViewById(R.id.textView1);
+        //mProgresBar = findViewById(R.id.textView1);
     }
 
     public void startTask(View view){
