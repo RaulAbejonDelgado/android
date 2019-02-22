@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static int contador = 0;
     private TextView mTextView;
     private static final String TEXT_STATE = "currentText";
     private ProgressBar mProgresBar;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mTextView = findViewById(R.id.textView1);
-        //mProgresBar = findViewById(R.id.textView1);
+        mProgresBar = findViewById(R.id.progressBar);
     }
 
     public void startTask(View view){
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         // Put a message in the text view
         mTextView.setText(R.string.napping);
         // Start the AsyncTask.
-        new MyAsyncTask(mTextView).execute();
+        new MyAsyncTask(mTextView, mProgresBar, ++contador).execute();
 
     }
 

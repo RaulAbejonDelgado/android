@@ -29,10 +29,10 @@ public class MyAsyncTask extends AsyncTask<Void, Integer, String> {
     @Override
     protected String doInBackground(Void... voids) {
         Random r = new Random();
-        int n = r.nextInt(11);
-        int s = n * 200;
+        int n = r.nextInt(10);
+        int s = n * 150;
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 10; i <= 100; i+=10) {
 
 
             try {
@@ -44,6 +44,7 @@ public class MyAsyncTask extends AsyncTask<Void, Integer, String> {
             publishProgress(i);
 
         }
+        System.out.println("termino");
         return "Awake at last after sleeping for " + s + " milliseconds!";
     }
 
