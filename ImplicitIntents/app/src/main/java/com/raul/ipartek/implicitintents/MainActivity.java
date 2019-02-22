@@ -43,14 +43,17 @@ public class MainActivity extends AppCompatActivity {
         // passed to the location handler intact.
         String loc = mLocationEditText.getText().toString();
         // Parse the location and create the intent.
-        Uri addressUri = Uri.parse("geo:0,0?q=" + loc);
+        Uri addressUri = Uri.parse("geo:0,0?q="+ loc);
         Intent intent = new Intent(Intent.ACTION_VIEW, addressUri);
+        intent.setPackage("com.google.android.apps.maps");
+
         // Find an activity to handle the intent, and start that activity.
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
             Log.d("ImplicitIntents", "Can't handle this intent!");
         }
+
     }
 
 
