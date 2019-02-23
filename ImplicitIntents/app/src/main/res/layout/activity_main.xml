@@ -15,11 +15,11 @@
             android:id="@+id/website_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/edittext_uri"/>
+            android:text=""/>
 
         <Button
             android:id="@+id/open_website_button"
-            android:layout_width="372dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:onClick="openWebsite"
@@ -32,7 +32,7 @@
 
         <Button
             android:id="@+id/open_location_button"
-            android:layout_width="374dp"
+            android:layout_width="match_parent"
 
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
@@ -46,7 +46,7 @@
 
         <Button
             android:id="@+id/share_text_button"
-            android:layout_width="398dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:onClick="shareText"
@@ -67,17 +67,46 @@
             android:text="@string/button_tel" />
 
         <EditText
-            android:id="@+id/telCam"
-            android:layout_width="176dp"
+            android:id="@+id/telText2"
+            android:layout_width="376dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone" />
 
         <Button
-            android:id="@+id/buttonCam"
+            android:id="@+id/buttonTel2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="openCamera"
-            android:text="@string/button_cam" />
+            android:onClick="openTelDial"
+            android:text="@string/button_tel2" />
+
+        <EditText
+            android:id="@+id/telContact"
+            android:layout_width="369dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/telContactButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openTelContact"
+            android:text="@string/button_contactTel" />
+
+        <EditText
+            android:id="@+id/emailText"
+            android:layout_width="369dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+        <Button
+            android:id="@+id/openEmailButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openEmail"
+            android:text="@string/button_sendEmail" />
+
     </LinearLayout>
 </ScrollView>

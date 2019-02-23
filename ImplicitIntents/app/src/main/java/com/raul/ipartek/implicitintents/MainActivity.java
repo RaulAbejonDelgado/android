@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.Manifest.permission.CALL_PHONE;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         String url = mWebsiteEditText.getText().toString();
 
-        Uri webpage = Uri.parse(url);
+        Uri webpage = Uri.parse("http://"+url);
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
 
         if (intent.resolveActivity(getPackageManager()) != null) {
@@ -190,5 +191,48 @@ public class MainActivity extends AppCompatActivity {
         int result = this.checkCallingOrSelfPermission(permission);
 
         return result == PackageManager.PERMISSION_GRANTED;
+    }
+
+    public void openTelContact(View view) {
+
+        TextView contact = findViewById(R.id.telContact);
+
+        Intent intentContacts = new Intent(Intent.ACTION_VIEW, Uri.parse("content://contacts/people"));
+
+        startActivity(intentContacts);
+
+
+    }
+
+    public void openEmail(View view) {
+
+        TextView email = findViewById(R.id.emailText);
+
+        String dir = email.getText().toString();
+
+        Intent emailTo = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"+dir));
+        emailTo.putExtra("subject", "Example subject");
+        emailTo.putExtra("body", "Example message");
+        emailTo.setPackage("com.google.android.gm");
+        if (emailTo.resolveActivity(getPackageManager())!=null){
+            startActivity(emailTo);
+        }else{
+            Toast.makeText(this,"Gmail App is not installed",Toast.LENGTH_SHORT).show();
+        }
+
+
+
+    }
+
+    public void openTelDial(View view) {
+
+        TextView tel = findViewById(R.id.telText2);
+
+        String telephoneNumber = tel.getText().toString();
+
+        Intent intentTel = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:" + telephoneNumber));
+
+
+        startActivity(intentTel);
     }
 }

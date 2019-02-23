@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ImplicitIntents</string>
-    <string name="edittext_uri">http://</string>
     <string name="button_uri">Open Website</string>
     <string name="edittext_loc">Golden Gate Bridge</string>
     <string name="button_loc">Open Location</string>
@@ -8,4 +7,7 @@
     <string name="button_share">Share This Text</string>
     <string name="button_tel">llamar</string>
     <string name="button_cam">Camara</string>
+    <string name="button_contactTel">Contacts</string>
+    <string name="button_sendEmail">Open email</string>
+    <string name="button_tel2">Dial call</string>
 </resources>
