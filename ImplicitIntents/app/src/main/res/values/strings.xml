@@ -6,4 +6,6 @@
     <string name="button_loc">Open Location</string>
     <string name="edittext_share">\'Twas brillig and the slithy toves</string>
     <string name="button_share">Share This Text</string>
+    <string name="button_tel">llamar</string>
+    <string name="button_cam">Camara</string>
 </resources>

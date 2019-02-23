@@ -1,48 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context="com.raul.ipartek.implicitintents.MainActivity">
-
-    <EditText
-        android:id="@+id/website_edittext"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/edittext_uri"/>
-    <Button
-        android:id="@+id/open_website_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="@string/button_uri"
-        android:onClick="openWebsite"/>
-    <EditText
-        android:id="@+id/location_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/edittext_loc"/>
-    <Button
-        android:id="@+id/open_location_button"
-        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context="com.raul.ipartek.implicitintents.MainActivity">
 
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="@string/button_loc"
-        android:onClick="openLocation"/>
-    <EditText
-        android:id="@+id/share_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/edittext_share"/>
-    <Button
-        android:id="@+id/share_text_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="@string/button_share"
-        android:onClick="shareText"/>
+        <EditText
+            android:id="@+id/website_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edittext_uri"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/open_website_button"
+            android:layout_width="372dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:onClick="openWebsite"
+            android:text="@string/button_uri" />
+        <EditText
+            android:id="@+id/location_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edittext_loc"/>
+
+        <Button
+            android:id="@+id/open_location_button"
+            android:layout_width="374dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:onClick="openLocation"
+            android:text="@string/button_loc" />
+        <EditText
+            android:id="@+id/share_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edittext_share"/>
+
+        <Button
+            android:id="@+id/share_text_button"
+            android:layout_width="398dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:onClick="shareText"
+            android:text="@string/button_share" />
+
+        <EditText
+            android:id="@+id/telText"
+            android:layout_width="376dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/buttonTel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openTel"
+            android:text="@string/button_tel" />
+
+        <EditText
+            android:id="@+id/telCam"
+            android:layout_width="176dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/buttonCam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openCamera"
+            android:text="@string/button_cam" />
+    </LinearLayout>
+</ScrollView>
