@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import static android.Manifest.permission.CALL_PHONE;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -91,7 +94,33 @@ public class MainActivity extends AppCompatActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 //metodo asyncrono
                 System.out.println("Api nueva 22 o superior");
-                requestPermissions(new String[] {Manifest.permission.CALL_PHONE}, PHONE_CALL_CODE);
+                if(checkPersimission(Manifest.permission.CALL_PHONE)){
+                    //permission acepted
+                    Intent i = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+ telephoneNumber));
+                    startActivity(i);
+
+                }else {
+                    // Or declined or fist time asking for permission
+                    //if dont asked
+                    if(!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)){
+                        requestPermissions(new String[] {Manifest.permission.CALL_PHONE}, PHONE_CALL_CODE);
+                    }else{
+                        //if declined permission
+                        Toast.makeText(MainActivity.this,"Please enable permission",Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                        i.addCategory(Intent.CATEGORY_DEFAULT);
+                        //locate application
+                        i.setData(Uri.parse("package:"+ getPackageName()));
+
+                        //delete cache navigation
+                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                        i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                        startActivity(i);
+
+                    }
+                }
+                //
 
             } else {
                 System.out.println("Api antigua 22 o inferior");
@@ -149,6 +178,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method checks if user acepted permission on older version
+     * UPDATE -> now this method will work on new api code flow to check if never user response
+     * on permission, if he acepted or if he declined
+     * @param permission Resource will check if user given permission over it
+     * @return true if is acepted or false is not acepted, if not acepted the app will not install
+     */
     private boolean checkPersimission(String permission) {
 
         int result = this.checkCallingOrSelfPermission(permission);
