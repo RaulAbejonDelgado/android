@@ -5,9 +5,11 @@
     <string name="button_loc">Open Location</string>
     <string name="edittext_share">\'Twas brillig and the slithy toves</string>
     <string name="button_share">Share This Text</string>
-    <string name="button_tel">llamar</string>
-    <string name="button_cam">Camara</string>
+    <string name="button_tel">Call</string>
+    <string name="button_front_cam">Front Camera</string>
+    <string name="button_back_cam">Back Camera</string>
     <string name="button_contactTel">Contacts</string>
     <string name="button_sendEmail">Open email</string>
     <string name="button_tel2">Dial call</string>
+    <string name="button_back__picture_cam">picture back camera</string>
 </resources>

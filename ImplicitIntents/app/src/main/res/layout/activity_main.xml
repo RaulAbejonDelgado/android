@@ -108,5 +108,26 @@
             android:onClick="openEmail"
             android:text="@string/button_sendEmail" />
 
+        <Button
+            android:id="@+id/buttonOpenCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openFrontCamera"
+            android:text="@string/button_front_cam" />
+
+        <Button
+            android:id="@+id/buttonOpenFrontCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openBackCamera"
+            android:text="@string/button_back_cam" />
+
+        <Button
+            android:id="@+id/buttonPictureBackCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openPictureBackCamera"
+            android:text="@string/button_back__picture_cam" />
+
     </LinearLayout>
 </ScrollView>

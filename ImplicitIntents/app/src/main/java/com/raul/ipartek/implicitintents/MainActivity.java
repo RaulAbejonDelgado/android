@@ -1,13 +1,16 @@
 package com.raul.ipartek.implicitintents;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mShareTextEditText;
     private EditText telText;
     private final int PHONE_CALL_CODE = 100;
+    private final int PICTURE_FROM_CAMERA = 50;
 
 
     @Override
@@ -144,9 +148,50 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-    public void openCamera(View view) {
+    public void openBackCamera(View view) {
+
+        Intent iC = new Intent("android.media.action.IMAGE_CAPTURE");
+        startActivity(iC);
+
     }
 
+    public void openFrontCamera(View view) {
+
+        Intent iC = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        iC.putExtra("android.intent.extras.CAMERA_FACING", 1);
+        startActivity(iC);
+
+    }
+
+    public void openPictureBackCamera(View view) {
+        Intent iC = new Intent("android.media.action.IMAGE_CAPTURE");
+        startActivityForResult(iC,PICTURE_FROM_CAMERA);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+
+        switch (requestCode){
+
+            case PICTURE_FROM_CAMERA:
+                if( resultCode == Activity.RESULT_OK ){
+                    String result = data.toUri(0);
+                    Toast.makeText(this,"Result:"+result,Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(this,"Try again",Toast.LENGTH_LONG).show();
+                }
+                break;
+
+
+            default:
+
+                super.onActivityResult(requestCode, resultCode, data);
+
+                break;
+        }
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -216,6 +261,9 @@ public class MainActivity extends AppCompatActivity {
         emailTo.setPackage("com.google.android.gm");
         if (emailTo.resolveActivity(getPackageManager())!=null){
             startActivity(emailTo);
+            //force to user to choose app
+            //startActivity(Intent.createChooser(emailTo, "Choose email app"))
+
         }else{
             Toast.makeText(this,"Gmail App is not installed",Toast.LENGTH_SHORT).show();
         }
@@ -235,4 +283,6 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intentTel);
     }
+
+
 }
