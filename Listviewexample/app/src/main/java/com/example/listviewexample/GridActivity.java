@@ -2,6 +2,9 @@ package com.example.listviewexample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -15,6 +18,9 @@ public class GridActivity extends AppCompatActivity {
 
     private GridView gW ;
     private  List<String> names;
+    MyAdapter mA;
+
+    private int counter = 0 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +66,34 @@ public class GridActivity extends AppCompatActivity {
         });
 
         //link with custom adapter
-        MyAdapter mA = new MyAdapter(this,R.layout.grid_item, names);
+        mA = new MyAdapter(this,R.layout.grid_item, names);
         gW.setAdapter(mA);
+    }
+
+    //to add option button on activity
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //return super.onCreateOptionsMenu(menu);
+        MenuInflater mI = getMenuInflater();
+        mI.inflate(R.menu.action_bar_name,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.add_item:
+                //add new name
+                this.names.add("Adder nº"+(++counter));
+                //notify to adapter the updated
+                this.mA.notifyDataSetChanged();
+
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 }
 
