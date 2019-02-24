@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">List view example</string>
+    <string name="show_list_view">Show List view</string>
+    <string name="show_grid_view">Show Grid view</string>
 </resources>

@@ -52,7 +52,7 @@ public class MyAdapter extends BaseAdapter {
         if(convertView == null){
             //parsing layout to layoutinflater inflanting
             LayoutInflater lI = LayoutInflater.from(this.context);
-            convertView = lI.inflate(R.layout.list_item, null);
+            convertView = lI.inflate(this.layoutRef, null);
 
             holder = new ViewHolder();
             holder.nameTextView = (TextView) convertView.findViewById(R.id.textView);

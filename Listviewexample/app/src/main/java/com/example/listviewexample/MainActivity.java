@@ -1,5 +1,6 @@
 package com.example.listviewexample;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,55 +16,30 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView lw ;
-    List<String> names;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lw = findViewById(R.id.listView);
+    }
 
-        names = new ArrayList<String>();
 
-        names.add("Borja");
-        names.add("Alvaro");
-        names.add("David");
-        names.add("Asier");
-        //added more to check scrollable function
-        names.add("Borja");
-        names.add("Alvaro");
-        names.add("David");
-        names.add("Asier");
-        names.add("Borja");
-        names.add("Alvaro");
-        names.add("David");
-        names.add("Asier");
-        names.add("Borja");
-        names.add("Alvaro");
-        names.add("David");
-        names.add("Asier");
+    public void openListView(View view) {
+        Intent listIntent = new Intent(MainActivity.this, ListActivity.class);
 
-        //need adapter to connect values with listview
-        //two ways
+        startActivity(listIntent);
 
-        //native method to show data
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,names);
-//        lw.setAdapter(adapter);
+    }
 
-        lw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+    public void openGridView(View view) {
 
-                Toast.makeText(MainActivity.this, "You clicked on -> "+ names.get(position),Toast.LENGTH_LONG).show();
+        Intent gridIntent = new Intent(MainActivity.this, GridActivity.class);
 
-            }
-        });
+        startActivity(gridIntent);
 
-        //link with custom adapter
-        MyAdapter mA = new MyAdapter(this,R.layout.list_item, names);
-        lw.setAdapter(mA);
+
     }
 }
 
