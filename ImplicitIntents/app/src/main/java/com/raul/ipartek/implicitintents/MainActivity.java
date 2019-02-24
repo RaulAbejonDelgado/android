@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         mLocationEditText = findViewById(R.id.location_edittext);
         mShareTextEditText = findViewById(R.id.share_edittext);
 
+        //force to change app icon
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //set the icon we want
+        getSupportActionBar().setIcon(R.mipmap.ic_example_icon);
+
     }
 
     public void openWebsite(View view) {

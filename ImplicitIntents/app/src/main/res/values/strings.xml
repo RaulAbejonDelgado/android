@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ImplicitIntents</string>
+    <string name="app_name">Implicit Intents</string>
     <string name="button_uri">Open Website</string>
     <string name="edittext_loc">Golden Gate Bridge</string>
     <string name="button_loc">Open Location</string>
