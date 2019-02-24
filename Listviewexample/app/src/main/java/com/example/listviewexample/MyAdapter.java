@@ -46,23 +46,34 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
 
-        //copy the input view
-        View v = convertView;
+        //viewHolder Pattern
+        ViewHolder holder;
+        //only if never be rendering
+        if(convertView == null){
+            //parsing layout to layoutinflater inflanting
+            LayoutInflater lI = LayoutInflater.from(this.context);
+            convertView = lI.inflate(R.layout.list_item, null);
 
-        //parsing layout to layoutinflater inflanting
-        LayoutInflater lI = LayoutInflater.from(this.context);
-        v = lI.inflate(R.layout.list_item, null);
+            holder = new ViewHolder();
+            holder.nameTextView = (TextView) convertView.findViewById(R.id.textView);
+            convertView.setTag(holder);
+
+        }else{
+            holder = (ViewHolder) convertView.getTag();
+        }
 
         //get clicked position element
         String currentName = names.get(position);
         //currentName = (String) getItem(position);
 
-        //ref to modified element and update it
-        TextView textView = (TextView) v.findViewById(R.id.textView);
-        textView.setText(currentName);
+        holder.nameTextView.setText(currentName);
 
-        return v;
+        return convertView;
+    }
 
+    static class ViewHolder{
+
+        private TextView nameTextView;
 
     }
 }

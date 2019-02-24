@@ -49,10 +49,8 @@ public class MainActivity extends AppCompatActivity {
         //two ways
 
         //native method to show data
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,names);
-
-        //link list View with adapter
-        lw.setAdapter(adapter);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,names);
+//        lw.setAdapter(adapter);
 
         lw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
