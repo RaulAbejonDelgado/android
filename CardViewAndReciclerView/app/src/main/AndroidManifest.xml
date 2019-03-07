@@ -9,8 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReciclerActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".ReciclerListActivity"
+            android:label="ReciclerListActivity"
+            android:parentActivityName=".ReciclerActivity"/>
+        <activity
+            android:name=".ReciclerActivity"
+            android:label="ReciclerActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".MainActivity"
+            android:label="Principal">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

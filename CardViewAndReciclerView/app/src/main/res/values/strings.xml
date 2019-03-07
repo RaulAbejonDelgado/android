@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CardViewAndReciclerView</string>
+    <string name="title_recicler_view_hall">Recicler view hall</string>
 </resources>
