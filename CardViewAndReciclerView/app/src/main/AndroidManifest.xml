@@ -10,17 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ReciclerGridActivity"
+            android:label="ReciclerGridActivity"
+            android:parentActivityName=".ReciclerActivity"
+            ></activity>
+        <activity
             android:name=".ReciclerListActivity"
             android:label="ReciclerListActivity"
-            android:parentActivityName=".ReciclerActivity"/>
+            android:parentActivityName=".ReciclerActivity" />
         <activity
             android:name=".ReciclerActivity"
             android:label="ReciclerActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="Principal">
-
+            android:label="ReciclerViewsByDrohne">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

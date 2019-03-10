@@ -3,17 +3,17 @@ package com.example.cardviewandreciclerview;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReciclerListActivity extends AppCompatActivity {
+public class ReciclerGridActivity extends AppCompatActivity {
 
     private List<String> names;
 
@@ -23,34 +23,32 @@ public class ReciclerListActivity extends AppCompatActivity {
 
     private int count = 0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recicler_list);
+        setContentView(R.layout.activity_recicler_grid);
         names = getAllNames();
 
-        recyclerView = (RecyclerView) findViewById(R.id.reciclerListView);
+        recyclerView = (RecyclerView) findViewById(R.id.reciclerGridView);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        layoutManager = new LinearLayoutManager(this);
+        layoutManager = new GridLayoutManager(this,2);
 
 
         // specify an adapter (see also next example)
         mAdapter = new MyAdapter(names, R.layout.recycler_view_item, new MyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(String name, int position) {
-                Toast.makeText(ReciclerListActivity.this,name + " - "+ (position +1) + " will be deleted !!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ReciclerGridActivity.this,name + " - "+ (position +1) + " will be deleted !!",Toast.LENGTH_SHORT).show();
                 delete(position);
             }
         });
 
         //si el item siempre va a ser del mismo tamaño mejora el rendimiento del recicler view
-        recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         recyclerView.setLayoutManager(layoutManager);

@@ -17,8 +17,8 @@
         android:layout_width="322dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="List"
-        android:onClick="reciclerListViewClick"/>
+        android:onClick="reciclerListViewClick"
+        android:text="List" />
     <Button
         android:id="@+id/buttonGridRecicler"
         android:layout_width="322dp"

@@ -20,6 +20,9 @@ public class ReciclerActivity extends AppCompatActivity {
     }
 
     public void reciclerGridViewClick(View view) {
+        Intent reciclerIntent = new Intent(ReciclerActivity.this, ReciclerGridActivity.class);
+
+        startActivity(reciclerIntent);
     }
 
     public void reciclerListViewClick(View view) {
