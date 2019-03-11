@@ -21,5 +21,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cardView(View view) {
+        Intent reciclerIntent = new Intent(MainActivity.this, CardActivity.class);
+
+        startActivity(reciclerIntent);
+
     }
 }

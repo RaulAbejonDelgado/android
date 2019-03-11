@@ -4,23 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".CardActivity">
 
     <Button
-        android:id="@+id/buttonRecyclerView"
+        android:id="@+id/button"
         android:layout_width="235dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="RecyclerView"
-        android:onClick="customReciclerView"/>
+        android:text="Card view"
+        android:onClick="cardViewExample"/>
 
     <Button
-        android:id="@+id/buttonCardView"
+        android:id="@+id/button2"
         android:layout_width="264dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="CardView"
-        android:onClick="cardView"
-        />
+        android:text="Recicler + Card view" />
+
 </LinearLayout>
