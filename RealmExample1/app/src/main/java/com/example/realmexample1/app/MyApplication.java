@@ -2,12 +2,14 @@ package com.example.realmexample1.app;
 
 import android.app.Application;
 
+import com.example.realmexample1.activities.MainActivity;
 import com.example.realmexample1.models.Board;
 import com.example.realmexample1.models.Note;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import io.realm.RealmObject;
 import io.realm.RealmResults;
 
@@ -28,6 +30,17 @@ public class MyApplication extends Application {
         NOTE_ID = getIdByTable(realm, Note.class);
         realm.close();
 
+    }
+
+    private void setUpRealConfig(){
+        Realm.init(getApplicationContext());
+
+        RealmConfiguration config = new RealmConfiguration
+                        .Builder()
+                        .deleteRealmIfMigrationNeeded()
+                        .build();
+
+        Realm.setDefaultConfiguration(config);
     }
 
     private <T extends RealmObject> AtomicInteger getIdByTable(Realm realm, Class<T> anyClass){
