@@ -5,19 +5,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.cardviewandreciclerview.model.BandejaSandiwch;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyAdapterCardRecicler extends RecyclerView.Adapter<MyAdapterCardRecicler.ViewHolder> {
 
-    private List<String> names;
+    private List<BandejaSandiwch> bandejas;
     private int layout;
     private OnItemClickListener oICL;
 
-    public MyAdapter(List<String> names, int layout, OnItemClickListener oICL) {
-        this.names = names;
+    public MyAdapterCardRecicler(List<BandejaSandiwch> bandejas, int layout, OnItemClickListener oICL) {
+        this.bandejas = bandejas;
         this.layout = layout;
         this.oICL = oICL;
     }
@@ -33,34 +35,37 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.bind(names.get(i),oICL);
+        viewHolder.bind(bandejas.get(i),oICL);
     }
 
     @Override
     public int getItemCount() {
-        return names.size();
+        return bandejas.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView textViewName;
+        public ImageView bandejaView;
 
         public ViewHolder(View v){
             super(v);
-            this.textViewName = v.findViewById(R.id.textViewName);
+            //this.textViewName = v.findViewById(R.id.textViewName);
+            textViewName = (TextView) itemView.findViewById(R.id.textBandejaView);
+            bandejaView = (ImageView) itemView.findViewById(R.id.imageViewBandeja);
         }
-        public void bind(final String name, final OnItemClickListener listener){
-            this.textViewName.setText(name);
-
+        public void bind(final BandejaSandiwch bandeja, final OnItemClickListener listener){
+            this.textViewName.setText(bandeja.getNombre());
+            bandejaView.setImageResource(bandeja.getImagen());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    listener.onItemClick(name,getAdapterPosition());
+                    listener.onItemClick(bandeja,getAdapterPosition());
                 }
             });
         }
     }
 
     public interface OnItemClickListener {
-        void onItemClick(String name, int position);
+        void onItemClick(BandejaSandiwch bandeja, int position);
     }
 }

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fragments</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="from_data">From Data</string>
+    <string name="from_details">From Details</string>
+</resources>

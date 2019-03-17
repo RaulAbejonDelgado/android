@@ -19,4 +19,10 @@ public class CardActivity extends AppCompatActivity {
 
         startActivity(reciclerIntent);
     }
+
+    public void cardReciclerView(View view) {
+        Intent reciclerIntent = new Intent(CardActivity.this, CardReciclerViewActivity.class);
+
+        startActivity(reciclerIntent);
+    }
 }

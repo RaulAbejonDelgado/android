@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CardViewActivity"
-            android:parentActivityName=".CardActivity"/>
-        <activity android:name=".CardActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".CardReciclerViewActivity"
+            android:parentActivityName=".CardActivity"></activity>
+        <activity
+            android:name=".CardViewActivity"
+            android:parentActivityName=".CardActivity" />
+        <activity
+            android:name=".CardActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ReciclerGridActivity"
             android:label="ReciclerGridActivity"

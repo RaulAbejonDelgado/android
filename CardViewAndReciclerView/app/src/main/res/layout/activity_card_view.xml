@@ -4,38 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CardViewActivity">
+    tools:context=".CardViewActivity"
+    android:orientation="horizontal">
 
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        card_view:cardBackgroundColor="#E2E2E2"
-        card_view:cardCornerRadius="4dp"
+        android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        >
+        card_view:cardBackgroundColor="#E2E2E2"
+        card_view:cardCornerRadius="4dp">
 
-
-        <ImageView
-            android:id="@+id/background_image"
+        <LinearLayout
+            android:id="@+id/test"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:background="@drawable/bcanapes" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textImage"
-            android:layout_width="wrap_content"
+
+            <ImageView
+                android:id="@+id/background_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bcanapes" />
+
+            <TextView
+                android:id="@+id/textImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="Hello" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/test2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="5dp"
-            android:text="Hello"
-            >
+            android:orientation="vertical"
+            android:layout_marginBottom="1dp">
 
-        </TextView>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="240dp"
+                android:layout_weight="1"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+
+
+        </LinearLayout>
+
+
     </android.support.v7.widget.CardView>
+
 
 </LinearLayout>
