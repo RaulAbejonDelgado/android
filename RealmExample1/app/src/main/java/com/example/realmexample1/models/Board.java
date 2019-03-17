@@ -1,5 +1,7 @@
 package com.example.realmexample1.models;
 
+import com.example.realmexample1.app.MyApplication;
+
 import java.util.Date;
 
 import io.realm.Realm;
@@ -27,7 +29,7 @@ public class Board extends RealmObject {
     }
 
     public Board(String title) {
-        this.id = 0 ;
+        this.id = MyApplication.BOARD_ID.incrementAndGet();
         this.title = title;
         this.createAt = new Date();
         this.notes = new RealmList<Note>();
