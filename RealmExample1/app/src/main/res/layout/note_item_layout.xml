@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#99EE64"
+    >
+
+    <TextView
+        android:id="@+id/noteDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/noteCreatedAtTexView"
+        android:layout_width="wrap_content"
+        android:textSize="10dp"
+        android:textStyle="italic"
+        android:gravity="right"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>

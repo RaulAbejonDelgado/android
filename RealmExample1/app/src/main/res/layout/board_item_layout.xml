@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#99EE64"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#D0B6D6"
+        android:padding="15sp"
+        android:layout_margin="10dp"
+        >
+
+    <TextView
+        android:id="@+id/boardItemTitleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:text="Title"
+        />
+
+    <TextView
+        android:id="@+id/boardItemNoteView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:text="Note"
+        />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/boardItemDateView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        />
+
+</LinearLayout>

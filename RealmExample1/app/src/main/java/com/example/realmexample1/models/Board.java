@@ -1,5 +1,6 @@
 package com.example.realmexample1.models;
 
+import com.example.realmexample1.activities.NoteActivity;
 import com.example.realmexample1.app.MyApplication;
 
 import java.util.Date;
@@ -54,4 +55,6 @@ public class Board extends RealmObject {
     public RealmList<Note> getNotes() {
         return notes;
     }
+
+
 }

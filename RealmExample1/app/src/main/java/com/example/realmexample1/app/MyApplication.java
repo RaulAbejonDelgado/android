@@ -23,8 +23,8 @@ public class MyApplication extends Application {
     //Always execute before of MainActivity
     @Override
     public void onCreate() {
-
         super.onCreate();
+        Realm.init(getApplicationContext());
         Realm realm = Realm.getDefaultInstance();
         BOARD_ID = getIdByTable(realm, Board.class);
         NOTE_ID = getIdByTable(realm, Note.class);
@@ -33,7 +33,7 @@ public class MyApplication extends Application {
     }
 
     private void setUpRealConfig(){
-        Realm.init(getApplicationContext());
+
 
         RealmConfiguration config = new RealmConfiguration
                         .Builder()
