@@ -2,7 +2,6 @@ package com.example.realmexample1.app;
 
 import android.app.Application;
 
-import com.example.realmexample1.activities.MainActivity;
 import com.example.realmexample1.models.Board;
 import com.example.realmexample1.models.Note;
 
@@ -30,7 +29,13 @@ public class MyApplication extends Application {
         NOTE_ID = getIdByTable(realm, Note.class);
         realm.close();
 
+
+
     }
+
+
+
+
 
     private void setUpRealConfig(){
 
