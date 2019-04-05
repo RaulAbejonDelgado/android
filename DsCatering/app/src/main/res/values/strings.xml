@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">DsCatering</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="order_label_text">Pedido:</string>
+    <string name="note_label_text">Nota:</string>
+    <string name="name_label_text">Nombre</string>
+    <string name="enter_name_hint">Introduzcaa su nombre</string>
+    <string name="address_label_text">Dirección</string>
+    <string name="enter_address_hint">Introuduzca dirección</string>
+    <string name="phone_label_string">Telefono</string>
+    <string name="enter_phone_hint">Introduzca el numero de telefono</string>
+    <string name="enter_note_hint">Introduzca nota</string>
+    <string name="productos">Su pedido:</string>
+    <string name="same_day_messenger_service">Delivero</string>
+    <string name="next_day_ground_delivery">Globo</string>
+    <string name="pick_up">Recoger en tienda</string>
+    <string name="opcion_no_valida">Opcion imposible que se de</string>
+    <string name="electronic_address_label_text">Correo electronico</string>
+
+    <string-array name="labels_array">
+        <item>Casa</item>
+        <item>Trabajo</item>
+        <item>Mobil</item>
+        <item>otro</item>
+    </string-array>
+</resources>
