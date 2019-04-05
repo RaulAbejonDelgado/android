@@ -4,21 +4,21 @@
     <group
         android:checkableBehavior="single">
         <item
-            android:id="@+id/option_1"
-            android:icon="@android:drawable/ic_dialog_info"
-            android:title="Option 1"
+            android:id="@+id/option_email"
+            android:icon="@android:drawable/sym_action_email"
+            android:title="email"
             />
 
         <item
-            android:id="@+id/option_2"
+            android:id="@+id/option_info"
             android:icon="@android:drawable/ic_dialog_info"
-            android:title="Option 2"
+            android:title="Info"
             />
 
         <item
-            android:id="@+id/option_3"
-            android:icon="@android:drawable/ic_dialog_info"
-            android:title="Option 3"
+            android:id="@+id/option_alert"
+            android:icon="@android:drawable/ic_dialog_alert"
+            android:title="Alert"
             />
     </group>
 
