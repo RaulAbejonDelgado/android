@@ -1,12 +1,12 @@
-package com.example.weatherapp;
+package com.example.gsonretrofit;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.weatherapp.api.API;
-import com.example.weatherapp.model.City;
-import com.example.weatherapp.service.IWeatherService;
+import com.example.gsonretrofit.api.API;
+import com.example.gsonretrofit.model.City;
+import com.example.gsonretrofit.service.IWeatherService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         IWeatherService iWeatherService = API.getApi().create(IWeatherService.class);
 
-        Call<City> cityCall = iWeatherService.getCity("Bilbao,es",API.API_KEY);
+        Call<City> cityCall = iWeatherService.getCity("Bilbao,es", API.API_KEY);
 
         cityCall.enqueue(new Callback<City>() {
             @Override
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Call<City> cityCallCelsius = iWeatherService.getCityCelsius("Bilbao,es",API.API_KEY, "metric");
+        Call<City> cityCallCelsius = iWeatherService.getCityCelsius("Bilbao,es", API.API_KEY, "metric");
         cityCallCelsius.enqueue(new Callback<City>() {
             @Override
             public void onResponse(Call<City> request, Response<City> response) {

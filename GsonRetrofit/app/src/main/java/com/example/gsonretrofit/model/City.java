@@ -1,37 +1,30 @@
-package com.example.weatherapp.model;
+package com.example.gsonretrofit.model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 public class City {
 
-    @Expose//to specified serialized property
     private int id;
     private String name;
-    @SerializedName("main")
-    private Temperature temperature;
-
+    private String country;
 
     public City(){};
 
-    public City(int id, String name, Temperature temperature ) {
+    public City(int id, String name,String country ) {
         this.id = id;
         this.name = name;
-        this.temperature = temperature;
-
+        this.country = country;
     }
 
-
-    public Temperature getTemperature() {
-        return temperature;
+    public String getCountry() {
+        return country;
     }
 
-    public void setTemperature(Temperature temperature) {
-        this.temperature = temperature;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public int getId() {
@@ -55,14 +48,7 @@ public class City {
         return "City{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", temperature=" + temperature +
+                ", country='" + country + '\'' +
                 '}';
-    }
-
-    public static Temperature parseJson(String response){
-        Gson gson = new GsonBuilder().create();
-        Temperature temperature = gson.fromJson(response, Temperature.class);
-        return temperature;
-
     }
 }
