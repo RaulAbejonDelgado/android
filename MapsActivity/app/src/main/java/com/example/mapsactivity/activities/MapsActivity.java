@@ -1,9 +1,10 @@
-package com.example.mapsactivity;
+package com.example.mapsactivity.activities;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.mapsactivity.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -15,7 +16,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
+    private GoogleMap googleMap;
 
 
     @Override
@@ -26,7 +27,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.map_activity);
         mapFragment.getMapAsync(this);
     }
 
@@ -42,17 +43,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        googleMap = googleMap;
 
         // Add a marker in Sydney and move the camera
         LatLng dsCatering = new LatLng(43.27238178823771, -2.946892082691193);
-        mMap.addMarker(new MarkerOptions().position(dsCatering).title("Catering Ds").visible(true).draggable(true));
+        googleMap.addMarker(new MarkerOptions().position(dsCatering).title("Catering Ds").visible(true).draggable(true));
 
         /**
          * set min max zoom allowed
          */
-        mMap.setMinZoomPreference(5);
-        mMap.setMinZoomPreference(15);
+        googleMap.setMinZoomPreference(5);
+        googleMap.setMinZoomPreference(15);
 
         /**
          * Zoom values -> limit 21
@@ -65,17 +66,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .bearing(35)
                 .tilt(90)
                 .build();
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(dsCatering));
 
-        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+        googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
                 Toast.makeText(MapsActivity.this, latLng.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
-        mMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
+        googleMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
             @Override
             public void onMarkerDragStart(Marker marker) {
 
