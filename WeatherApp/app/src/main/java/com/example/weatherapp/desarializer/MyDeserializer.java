@@ -23,6 +23,7 @@ public class MyDeserializer implements JsonDeserializer<City> {
         //city data
         int id = json.getAsJsonObject().get("id").getAsInt();
         String name = json.getAsJsonObject().get("name").getAsString();
+        String country =json.getAsJsonObject().get("sys").getAsJsonObject().get("country").getAsString() ;
 
         weather.setIcon(json.getAsJsonObject().get("weather").getAsJsonArray().get(0).getAsJsonObject().get("icon").getAsString());
         weather.setId(json.getAsJsonObject().get("weather").getAsJsonArray().get(0).getAsJsonObject().get("id").getAsInt());
@@ -37,6 +38,7 @@ public class MyDeserializer implements JsonDeserializer<City> {
 
         city.setId(id);
         city.setName(name);
+        city.setCountry(country);
         city.setTemperature(temperature);
         city.setWeather(weather);
 

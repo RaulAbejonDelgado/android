@@ -64,8 +64,9 @@ public class MainActivity extends AppCompatActivity {
 
                 cityText.setText(city.getName());
                 city.getTemperature().getTemp();
-                tempText.setText(String.valueOf(city.getTemperature().getTemp()));
+                tempText.setText(String.valueOf(city.getTemperature().getTemp())+" Cº");
                 detailText.setText(city.toString());
+                detailText.setText(setDetailData(city));
 
                 String iconUrl = API.IMG_URL + city.getWeather().getIcon() + ".png";
                 Picasso.with(MainActivity.this).load(iconUrl).into(iconView);
@@ -78,7 +79,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
 
+    private String setDetailData(City city){
+
+         String data =
+                "Ciudad : "+ city.getName() +", "+city.getCountry()+"\n"+
+                "Temperatura : "+ city.getTemperature().getTemp() +" Cº\n"+
+                "Temperatura máxima : "+ city.getTemperature().getTempMax() +" Cº\n"+
+                "Temperatura mínima : "+ city.getTemperature().getTempMin() +" Cº\n"+
+                "Humedad : "+ city.getTemperature().getHumidity() + " %";
+
+        return  data;
     }
 
 

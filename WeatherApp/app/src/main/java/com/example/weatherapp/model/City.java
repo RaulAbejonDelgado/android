@@ -16,16 +16,26 @@ public class City {
     private Temperature temperature;
     @SerializedName("weather")
     private Weather weather;
+    private String country;
 
 
     public City(){};
 
-    public City(int id, String name, Temperature temperature, Weather weather ) {
+    public City(int id, String name, Temperature temperature, Weather weather,String country ) {
         this.id = id;
         this.name = name;
         this.temperature = temperature;
         this.weather = weather;
+        this.country = country;
 
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public Weather getWeather() {
@@ -67,6 +77,7 @@ public class City {
                 ", name='" + name + '\'' +
                 ", temperature=" + temperature +
                 ", weather=" + weather +
+                ", country='" + country + '\'' +
                 '}';
     }
 
