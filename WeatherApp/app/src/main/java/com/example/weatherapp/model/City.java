@@ -14,17 +14,27 @@ public class City {
     private String name;
     @SerializedName("main")
     private Temperature temperature;
+    @SerializedName("weather")
+    private Weather weather;
 
 
     public City(){};
 
-    public City(int id, String name, Temperature temperature ) {
+    public City(int id, String name, Temperature temperature, Weather weather ) {
         this.id = id;
         this.name = name;
         this.temperature = temperature;
+        this.weather = weather;
 
     }
 
+    public Weather getWeather() {
+        return weather;
+    }
+
+    public void setWeather(Weather weather) {
+        this.weather = weather;
+    }
 
     public Temperature getTemperature() {
         return temperature;
@@ -56,13 +66,17 @@ public class City {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", temperature=" + temperature +
+                ", weather=" + weather +
                 '}';
     }
 
-    public static Temperature parseJson(String response){
-        Gson gson = new GsonBuilder().create();
-        Temperature temperature = gson.fromJson(response, Temperature.class);
-        return temperature;
+    //    public static Temperature parseJson(String response){
+//        Gson gson = new GsonBuilder().create();
+//        Temperature temperature = gson.fromJson(response, Temperature.class);
+//        return Temperature;
+//
+//    }
 
-    }
+
+
 }
