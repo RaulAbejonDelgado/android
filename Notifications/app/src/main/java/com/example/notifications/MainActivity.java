@@ -1,7 +1,9 @@
 package com.example.notifications;
 
+import android.app.Notification;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -16,13 +18,14 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.editText1)
-    EditText editText;
+    EditText editTextTitle;
     @BindView(R.id.editText2)
-    EditText editText1;
+    EditText editTextMessage;
     @BindView(R.id.switch1)
     Switch switch1;
 //    @BindView(R.id.button)
 //    Button button;
+    private NotificationHandler notificationHandler;
 
     private boolean isHighImportante;
 
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        notificationHandler = new NotificationHandler(this);
 
 //        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 //            @Override
@@ -47,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void sendNotification() {
         Toast.makeText(this, "Working", Toast.LENGTH_SHORT).show();
+        String title = editTextTitle.getText().toString();
+        String message = editTextMessage.getText().toString();
+
+        if(!TextUtils.isEmpty(title) && !TextUtils.isEmpty(message)){
+            Notification.Builder notificationBuilder = notificationHandler.createNotification(title,message,isHighImportante) ;
+            notificationHandler.getManager().notify(1,notificationBuilder.build());
+        }
     }
 
     @OnCheckedChanged(R.id.switch1)
